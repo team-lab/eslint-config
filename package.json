@@ -1,0 +1,22 @@
+{
+  "name": "eslint-config-teamlab",
+  "version": "0.0.0",
+  "description": "teamLab's ESLint configuration",
+  "main": "recommended.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-lab/eslint-config.git"
+  },
+  "author": "teamLab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/team-lab/eslint-config/issues"
+  },
+  "homepage": "https://github.com/team-lab/eslint-config#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
