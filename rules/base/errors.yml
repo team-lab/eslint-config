@@ -40,7 +40,7 @@ rules:
   no-extra-boolean-cast: error
   # 不必要な括弧を許可しない
   no-extra-parens:
-    - off
+    - "error"
     - all
     -
       conditionalAssign: true
