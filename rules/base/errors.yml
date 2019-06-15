@@ -16,6 +16,8 @@ rules:
   no-compare-neg-zero: error
   # 条件式での代入を許可しない
   no-cond-assign: [error, always]
+  # consoleの使用を許可しない
+  no-console: "warn"
   # 条件式での定数式の使用を許可しない
   no-constant-condition: error
   # 正規表現での制御文字の使用を許可しない
