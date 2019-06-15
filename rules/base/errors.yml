@@ -16,10 +16,8 @@ rules:
   no-compare-neg-zero: error
   # 条件式での代入を許可しない
   no-cond-assign: [error, always]
-  # consoleの使用を許可しない
-  no-console: "off"
   # 条件式での定数式の使用を許可しない
-  no-constant-condition: warn
+  no-constant-condition: error
   # 正規表現での制御文字の使用を許可しない
   no-control-regex: error
   # debugger文の使用を許可しない
@@ -39,7 +37,16 @@ rules:
   # 意味のないBoolean型へのキャストを許可しない
   no-extra-boolean-cast: error
   # 不必要な括弧を許可しない
-  no-extra-parens: "off"
+  no-extra-parens:
+    - off
+    - all
+    -
+      conditionalAssign: true
+      returnAssign: true
+      nestedBinaryExpressions: false
+      ignoreJSX: all
+      enforceForArrowConditionals: false
+      functions: error
   # 不必要なセミコロンを許可しない
   no-extra-semi: error
   # 関数の再代入を許可しない
