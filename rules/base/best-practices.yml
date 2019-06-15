@@ -12,20 +12,17 @@ rules:
   block-scoped-var: error
   # thisが使用されないクラスを許可しない
   class-methods-use-this:
-    - error
+    - warn
       # 除外するメソッド名
     - exceptMethod: []
   # 指定した上限以上の循環的複雑度を許可しない
-  complexity: [error, 11]
+  complexity: [error, 10]
   # returnの記述に一貫性をもたせる
   consistent-return: error
   # 複数行に渡る場合はブレスを強制
-  curly: [error, multi-line]
+  curly: [error, all]
   # Default caseを強制する
-  default-case:
-    - error
-      # 省略可能とするコメント
-    - commentPattern: "^skip\\sdefault"
+  default-case: "off"
   # オブジェクトのプロパティを改行させるときのドットの位置を強制する
   dot-location: [error, property]
   # ドット表記が可能な場合は強制する
@@ -56,7 +53,7 @@ rules:
   # 空の関数の宣言を許可しない
   no-empty-function:
     - error
-    - allow: [functions, arrowFunctions, methods]
+    - allow: [functions, arrowFunctions, methods, constructors]
   # 空のオブジェクト/配列への分割代入を許可しない
   no-empty-pattern: error
   # Nullとの比較を許可しない
@@ -102,7 +99,8 @@ rules:
   no-multi-spaces:
     - error
       # 行末のコメントでは許可する
-    - ignoreEOLComments: false
+    - ignoreEOLComments: true
+    - Property: true
   # 文字列リテラルでの改行を許可しない
   no-multi-str: error
   # 変数に格納されないnewを許可しない
@@ -116,25 +114,13 @@ rules:
   # 文字列リテラルでの8進数のエスケープを許可しない
   no-octal-escape: error
   # 引数への再代入を許可しない
-  no-param-reassign:
-    - error
-      # プロパティへの代入を許可しない
-    - props: true
-      # 再代入を許可する引数名
-      ignorePropertyModificationsFor:
-        - acc # for reduce accumulators
-        - accumulator # for reduce accumulators
-        - e # for e.returnValue
-        - req # for Express request
-        - res # for Express response
+  no-param-reassign: false
   # __proto__の使用を許可しない
   no-proto: error
   # 同名の変数の宣言を許可しない
   no-redeclare: error
   # 指定したオプジェクトのプロパティの使用を許可しない
-  no-restricted-properties:
-    - error
-    - {}
+  no-restricted-properties: "off"
   # return時の代入を許可しない
   no-return-assign: [error, always]
   # 不必要なreturn時のawaitを許可しない
@@ -153,12 +139,12 @@ rules:
   # Errorインスタンス以外のthrowを許可しない
   no-throw-literal: error
   # ループでの変化しない条件の使用を許可しない
-  no-unmodified-loop-condition: "off"
+  no-unmodified-loop-condition: error
   # 未使用の式を許可しない
   no-unused-expressions:
     - error
       # OR/ANDでの条件の短縮記法を許可する
-    - allowShortCircuit: false
+    - allowShortCircuit: true
       # 三項演算子での短縮記法を許可する
       allowTernary: false
       # テンプレートリテラルのタグを許可する
@@ -166,7 +152,7 @@ rules:
   # 未使用のラベルを許可しない
   no-unused-labels: error
   # 不必要な.call(), .apply()を許可しない
-  no-useless-call: "off"
+  no-useless-call: error
   # 不必要なcatch句を許可しない
   no-useless-catch: "off"
   # 不必要な文字列結合を許可しない
