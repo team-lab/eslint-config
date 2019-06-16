@@ -1,0 +1,102 @@
+# TypeScript Rules
+---
+plugins: ["@typescript-eslint"]
+rules:
+  "@typescript-eslint/adjacent-overload-signatures": error # 同名のオーバーロードを並べて定義することを強制する
+  "@typescript-eslint/array-type": # 配列の表現をT[]かArray<T>に統一する
+    - error
+    - array-simple # Tがシンプルな型の場合のみT[]を強制する
+  "@typescript-eslint/await-thenable": error # Promiseな値以外でのawaitの使用を許可しない
+  "@typescript-eslint/ban-ts-ignore": "off" # @ts-ignoreの使用を許可しない
+  "@typescript-eslint/ban-types": error # 特定のランタイムオブジェクトの型としての使用を許可しない
+  camelcase: "off" # 競合するESLint標準のルールをオフに
+  "@typescript-eslint/camelcase": error # 変数名をキャメルケースに強制する
+  "@typescript-eslint/class-name-casing": error # クラス名をパスカルケースに強制する
+  "@typescript-eslint/explicit-function-return-type": # 関数の返り値の明示的な型定義を強制する
+    - error
+    - allowExpressions: true # コールバックなど返り値が定義されている場合は省略を許可する
+      allowTypedFunctionExpressions: true # 関数が型定義されている場合は省略を許可する
+      allowHigherOrderFunctions: true # 高階関数の場合は省略を許可する
+  "@typescript-eslint/explicit-member-accessibility": # クラスのプロパティとメソッドにアクセサを強制する
+    - error
+    - accessibility: explicit # アクセサを定義する
+      overrides:
+        accessors: explicit #
+        constructors: no-public # PublicでないConstructorのアクセサを定義する
+        methods: explicit # メソッドのアクセサを定義する
+        properties: explicit # プロパティのアクセサを定義する
+        parameterProperties: explicit # パラメータプロパティのアクセサを定義する
+  "@typescript-eslint/func-call-spacing": "off" # 関数呼び出し時のスペースの有無を統一する（標準ルールと重複するため無効化）
+  "@typescript-eslint/generic-type-naming": # ジェネリックの型変数の命名を統一する
+    - error
+    - "^T[A-Z][a-zA-Z]+$"
+  "@typescript-eslint/indent": "off" # インデントを統一する（標準ルールと重複するため無効化）
+  "@typescript-eslint/interface-name-prefix": # インターフェース名にプレフィックスを強制する
+    - error
+    - always
+  "@typescript-eslint/member-delimiter-style": # インターフェースと型リテラルでの区切り文字を統一する
+    - error
+    - multiline:
+        delimiter: semi
+        requireLast: true
+      singlelline:
+        delimiter: semi
+        requireLast: false
+  "@typescript-eslint/member-naming": "off" # メンバー変数の命名規則を統一する
+  "@typescript-eslint/member-ordering": error # クラスのメンバーの定義順を統一する
+  "@typescript-eslint/no-angle-bracket-type-assertion": error # <Type>アサーションの使用を許可しない
+  no-array-constructor: "off" # 競合するESLint標準のルールをオフに
+  "@typescript-eslint/no-array-constructor": error # Arrayクラスを使用する場合にジェネリックの指定を強制する
+  "@typescript-eslint/no-empty-interface": error # 空のインターフェースの定義を許可しない
+  "@typescript-eslint/no-explicit-any": "off" # any型の使用を許可しない
+  "@typescript-eslint/no-extra-parens": "off" # 不必要なカッコを許可しない（標準ルールと重複するため無効化）
+  "@typescript-eslint/no-extraneous-class": "off" # 名前空間としてのクラスの使用を許可しない
+  "@typescript-eslint/no-floating-promises": error # await/thenされないPromise-Likeな値を許可しない
+  "@typescript-eslint/no-for-in-array": error # 配列でのfor-inループを許可しない
+  "@typescript-eslint/no-inferrable-types": error # 推測可能な変数への型定義を許可しない
+  no-magic-numbers: "off" # 競合するESLint標準のルールをオフに
+  "@typescript-eslint/no-magic-numbers": "off" # マジックナンバーの使用を許可しない
+  "@typescript-eslint/no-misused-new": error # クラスでのnew、インターフェースでのContructorの定義を許可しない
+  "@typescript-eslint/no-namespace": error # 名前空間の使用を許可しない
+  "@typescript-eslint/no-non-null-assertion": "off" # NonNullアサーションの使用を許可しない
+  "@typescript-eslint/no-object-literal-type-assertion": "off" # オブジェクトリテラルへのアサーションを許可しない
+  "@typescript-eslint/no-parameter-properties": "off" # パラメータプロパティの使用を許可しない
+  "@typescript-eslint/no-require-imports": "off" # require()の使用を許可しない
+  "@typescript-eslint/no-this-alias": "off" # thisの代入を許可しない
+  "@typescript-eslint/no-triple-slash-reference": error # /// <reference path="" />コメントを許可しない
+  "@typescript-eslint/no-type-alias": "off" # 型エイリアスの使用を許可しない
+  "@typescript-eslint/no-unnecessary-qualifier": error # 不要な名前空間修飾子の使用を許可しない
+  "@typescript-eslint/no-unnecessary-type-assertion": error # 不必要なアサーションを許可しない
+  no-unused-vars: "off" # 競合するESLint標準のルールをオフに
+  "@typescript-eslint/no-unused-vars": # 使用していない変数の定義を許可しない
+    - error
+    - vars: all
+      args: after-used
+      ignoreRestSiblings: false
+  no-use-before-define: "off" # 競合するESLint標準のルールをオフに
+  "@typescript-eslint/no-use-before-define": # 定義前の変数・関数・クラスの使用を許可しない
+    - error
+    - functions: false # 関数
+      classes: false # クラス
+      variables: true # 変数
+      typedefs: true # 型定義
+  no-useless-constructor: "off" # 競合するESLint標準のルールをオフに
+  "@typescript-eslint/no-useless-constructor": error # 不必要なConstructorの定義を許可しない
+  "@typescript-eslint/no-var-requires": "off" # importステートメント以外でのrequire()の使用を許可しない
+  "@typescript-eslint/prefer-for-of": "off" # Indexが要素の参照のためだけに使用されているループではforよりもfor-ofを推奨する
+  "@typescript-eslint/prefer-function-type": error # 呼び出しシグネチャのみの関数のインターフェースよりも関数型での定義を推奨する
+  "@typescript-eslint/prefer-includes": error # 存在確認ではindexOf()よりもincludes()の使用を推奨する
+  "@typescript-eslint/prefer-interface": "off" # 型リテラルよりもインターフェースの使用を推奨する
+  "@typescript-eslint/prefer-namespace-keyword": error # TypeScriptモジュールの定義ではmoduleよりもnamespaceを推奨する
+  "@typescript-eslint/prefer-regexp-exec": error # gフラグを指定しない正規表現のマッチではmatchよりもexecの使用を推奨する
+  "@typescript-eslint/prefer-string-starts-ends-with": error # 前方一致、後方一致のマッチではstartsWith/endsWithの使用を推奨する
+  "@typescript-eslint/promise-function-async": "off" # 非同期関数にasyncの付与を強制する
+  "@typescript-eslint/require-array-sort-compare": "off" # Array.sort()でのコールバック関数の指定を強制する
+  "@typescript-eslint/restrict-plus-operands": "off" # 異なる型どうしでの+演算子の使用を許可しない
+  "@typescript-eslint/semi": "off" # セミコロンの有無を統一する（標準ルールと重複するため無効化）
+  "@typescript-eslint/type-annotation-spacing": # 型注釈でのスペースの有無を統一する
+    - error
+    - before: false
+      after: true
+  "@typescript-eslint/unbound-method": "off" # メソッドが期待されるスコープ内でコールされることを強制する
+  "@typescript-eslint/unified-signatures": error # 不必要なオーバーライドを許可しない
