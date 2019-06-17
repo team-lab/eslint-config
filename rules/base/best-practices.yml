@@ -8,7 +8,7 @@ rules:
     - error
       # 暗黙のundefinedを許可する
     - allowImplicit: true
-  # ブロックスコープで定義された変数の仕様を許可しない
+  # ブロックスコープで定義された変数の使用を許可しない
   block-scoped-var: error
   # thisが使用されないクラスを許可しない
   class-methods-use-this:
@@ -17,7 +17,7 @@ rules:
     - exceptMethod: []
   # 指定した上限以上の循環的複雑度を許可しない
   complexity: [error, 10]
-  # returnの記述に一貫性をもたせる
+  # 条件式で返却値があればもう一方の条件でも値を返すよう強制する
   consistent-return: error
   # 複数行に渡る場合はブレスを強制
   curly: [error, all]
@@ -114,7 +114,7 @@ rules:
   # 文字列リテラルでの8進数のエスケープを許可しない
   no-octal-escape: error
   # 引数への再代入を許可しない
-  no-param-reassign: false
+  no-param-reassign: error
   # __proto__の使用を許可しない
   no-proto: error
   # 同名の変数の宣言を許可しない
@@ -187,5 +187,5 @@ rules:
     - error
     - inside
     - functionPrototypeMethods: false
-  # フォースとともにあらんことを
+  # Yoda記法を許可しない
   yoda: error
