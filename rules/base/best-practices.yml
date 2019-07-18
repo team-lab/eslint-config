@@ -1,0 +1,191 @@
+# Best Practices
+---
+rules:
+  # Getter/Setterをペアにすることを強制する
+  accessor-pairs: "off"
+  # 配列のビルトインメソッドで値の返却を強制する
+  array-callback-return:
+    - error
+      # 暗黙のundefinedを許可する
+    - allowImplicit: true
+  # ブロックスコープで定義された変数の使用を許可しない
+  block-scoped-var: error
+  # thisが使用されないクラスを許可しない
+  class-methods-use-this:
+    - warn
+      # 除外するメソッド名
+    - exceptMethod: []
+  # 指定した上限以上の循環的複雑度を許可しない
+  complexity: [error, 10]
+  # 条件式で返却値があればもう一方の条件でも値を返すよう強制する
+  consistent-return: error
+  # 複数行に渡る場合はブレスを強制
+  curly: [error, all]
+  # Default caseを強制する
+  default-case: "off"
+  # オブジェクトのプロパティを改行させるときのドットの位置を強制する
+  dot-location: [error, property]
+  # ドット表記が可能な場合は強制する
+  dot-notation:
+    - error
+    - allowKeywords: true
+  # 厳密等価演算子の使用を強制する
+  eqeqeq:
+    - error
+    - always
+    - "null": ignore
+  # for-in時のプロトタイプを保護する
+  guard-for-in: error
+  # １ファイルあたりのクラスの数を強制する
+  max-classes-per-file: [error, 1]
+  # Alertの使用を許可しない
+  no-alert: warn
+  # arguments.caller, arguments.calleeの使用を許可しない
+  no-caller: error
+  # ブロックスコープでないcase, default句での宣言を許可しない
+  no-case-declarations: error
+  # 正規表現の先頭の = のエスケープを強制する
+  no-div-regex: "off"
+  # ifでreturnされたらelseの省略を強制する
+  no-else-return:
+    - error
+    - allowElseIf: false
+  # 空の関数の宣言を許可しない
+  no-empty-function:
+    - error
+    - allow: [functions, arrowFunctions, methods, constructors]
+  # 空のオブジェクト/配列への分割代入を許可しない
+  no-empty-pattern: error
+  # Nullとの比較を許可しない
+  no-eq-null: "off"
+  # eval()の使用を許可しない
+  no-eval: error
+  # ネイティブオブジェクトの拡張を許可しない
+  no-extend-native: error
+  # 不必要な関数のbindを許可しない
+  no-extra-bind: error
+  # 不必要なLabelの使用を許可しない
+  no-extra-label: error
+  # case句でのbreakを強制する
+  no-fallthrough: error
+  # 1未満の小数の先頭の0を強制する
+  no-floating-decimal: error
+  # ネイティブオブジェクトや読み取り専用なグローバルの変数への代入を許可しない
+  no-global-assign: error
+  # 暗黙的な型変換を許可しない
+  no-implicit-coercion: "off"
+  # 暗黙的なグローバルスコープへの宣言を許可しない
+  no-implicit-globals: "off"
+  # 暗黙的なeval()を許可しない
+  no-implied-eval: error
+  # class-likeオブジェクト外でのthisの使用を許可しない
+  no-invalid-this: "off"
+  # __iterator__プロパティの使用を許可しない
+  no-iterator: error
+  # label句の使用を許可しない
+  no-labels:
+    - error
+      # ループ文での使用を許可する
+    - allowLoop: false
+      # Switch文での使用を許可する
+      allowSwitch: false
+  # 不要なブロックスコープの定義を許可しない
+  no-lone-blocks: error
+  # ループ内での関数の宣言を許可しない
+  no-loop-func: error
+  # マジックナンバーの使用を許可しない
+  no-magic-numbers: "off"
+  # 複数のスペースを許可しない
+  no-multi-spaces:
+    - error
+      # 行末のコメントでは許可する
+    - ignoreEOLComments: true
+    - Property: true
+  # 文字列リテラルでの改行を許可しない
+  no-multi-str: error
+  # 変数に格納されないnewを許可しない
+  no-new: error
+  # Functionのコンストラクタの使用を許可しない
+  no-new-func: error
+  # 不必要なプリミティブ型のクラスでのラップを許可しない
+  no-new-wrappers: error
+  # 8進数表記を許可しない
+  no-octal: error
+  # 文字列リテラルでの8進数のエスケープを許可しない
+  no-octal-escape: error
+  # 引数への再代入を許可しない
+  no-param-reassign: error
+  # __proto__の使用を許可しない
+  no-proto: error
+  # 同名の変数の宣言を許可しない
+  no-redeclare: error
+  # 指定したオプジェクトのプロパティの使用を許可しない
+  no-restricted-properties: "off"
+  # return時の代入を許可しない
+  no-return-assign: [error, always]
+  # 不必要なreturn時のawaitを許可しない
+  no-return-await: error
+  # ScriptURLの使用を許可しない
+  no-script-url: error
+  # 自分自身への代入を許可しない
+  no-self-assign:
+    - error
+      # プロパティの代入を許可しない
+    - props: false
+  # 自分自身との比較を許可しない
+  no-self-compare: error
+  # コンマ演算子の使用を許可しない
+  no-sequences: error
+  # Errorインスタンス以外のthrowを許可しない
+  no-throw-literal: error
+  # ループでの変化しない条件の使用を許可しない
+  no-unmodified-loop-condition: error
+  # 未使用の式を許可しない
+  no-unused-expressions:
+    - error
+      # OR/ANDでの条件の短縮記法を許可する
+    - allowShortCircuit: true
+      # 三項演算子での短縮記法を許可する
+      allowTernary: false
+      # テンプレートリテラルのタグを許可する
+      allowTaggedTemplates: false
+  # 未使用のラベルを許可しない
+  no-unused-labels: error
+  # 不必要な.call(), .apply()を許可しない
+  no-useless-call: error
+  # 不必要なcatch句を許可しない
+  no-useless-catch: "off"
+  # 不必要な文字列結合を許可しない
+  no-useless-concat: error
+  # 不必要なエスケープを許可しない
+  no-useless-escape: error
+  # 不必要なreturnを許可しない
+  no-useless-return: error
+  # voidオペレータの使用を許可しない
+  no-void: error
+  # TODO, FIXMEなどの開発者向けのコメントを許可しない
+  no-warning-comments: "off"
+  # with文の使用を許可しない
+  no-with: error
+  # 正規表現では名前付きキャプチャグループの使用を強制する
+  prefer-named-capture-group: "off"
+  # reject()時の引数をErrorインスタンスに強制する
+  prefer-promise-reject-errors:
+    - error
+      # 空のreject()を許可する
+    - allowEmptyReject: true
+  # parseIntでの進数指定を強制する
+  radix: error
+  # await式のない非同期関数を許可しない
+  require-await: "off"
+  # 正規表現で`u`フラグの指定を強制する
+  require-unicode-regexp: "off"
+  # すべての変数の宣言をスコープのはじめで行うことを強制する
+  vars-on-top: error
+  # 即時関数をカッコで囲うことを強制する
+  wrap-iife:
+    - error
+    - inside
+    - functionPrototypeMethods: false
+  # Yoda記法を許可しない
+  yoda: error
