@@ -4,7 +4,7 @@ rules:
   # コールバックが呼ばれたあとのreturnを強制する
   callback-return: "off"
   # グローバルスコープでのrequire()を強制する
-  global-require: error
+  global-require: "off"
   # コールバックエラーの制御を強制する
   handle-callback-err: "off"
   # Bufferクラスのコンストラクタの使用を許可しない
@@ -18,7 +18,7 @@ rules:
   # process.envの使用を許可しない
   no-process-env: "off"
   # process.exit()の使用を許可しない
-  no-process-exit: "off"
+  no-process-exit: error
   # 制限されたNode.jsモジュールの使用を許可しない
   no-restricted-modules: "off"
   # 同期処理を許可しない
