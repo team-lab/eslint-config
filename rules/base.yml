@@ -1,3 +1,4 @@
 ---
 extends:
   - ./rules/node.yml
+  - ./base/errors.yml

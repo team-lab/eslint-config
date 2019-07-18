@@ -1,0 +1,89 @@
+# Possible Errors
+---
+rules:
+  # for文での到達できないカウンタを許可しない
+  for-direction: error
+  # Getterでのreturnを強制する
+  getter-return:
+    - error
+    # 暗黙のundefinedを許可する
+    - allowImplicit: true
+  # Promise解決のためだけのasync/awaitの使用を許可しない
+  no-async-promise-executor: error
+  # ループ内でのawaitの利用を許可しない
+  no-await-in-loop: error
+  # -0との比較を許可しない
+  no-compare-neg-zero: error
+  # 条件式での代入を許可しない
+  no-cond-assign: [error, always]
+  # consoleの使用を許可しない
+  no-console: "warn"
+  # 条件式での定数式の使用を許可しない
+  no-constant-condition: error
+  # 正規表現での制御文字の使用を許可しない
+  no-control-regex: error
+  # debugger文の使用を許可しない
+  no-debugger: error
+  # 引数での重複した変数名を許可しない
+  no-dupe-args: error
+  # オブジェクトでの重複したキー名を許可しない
+  no-dupe-keys: error
+  # 重複したcaseラベルを許可しない
+  no-duplicate-case: error
+  # 空のブロックステートメントを許可しない
+  no-empty: error
+  # 正規表現で空の文字クラスを許可しない
+  no-empty-character-class: error
+  # catch句でのスコープ外の変数への代入を許可しない
+  no-ex-assign: error
+  # 意味のないBoolean型へのキャストを許可しない
+  no-extra-boolean-cast: error
+  # 不必要な括弧を許可しない
+  no-extra-parens:
+    - "error"
+    - all
+    -
+      conditionalAssign: true
+      returnAssign: true
+      nestedBinaryExpressions: false
+      ignoreJSX: all
+      enforceForArrowConditionals: false
+      functions: error
+  # 不必要なセミコロンを許可しない
+  no-extra-semi: error
+  # 関数の再代入を許可しない
+  no-func-assign: error
+  # 関数内のネストしたブロック内での関数、変数の宣言を許可しない
+  no-inner-declarations: error
+  # RegExpコンストラクタでの無効な文字列の指定を許可しない
+  no-invalid-regexp: error
+  # 不規則なスペースを許可しない
+  no-irregular-whitespace: error
+  # 正規表現の文字クラスで複数のコードポイントから構成される文字の指定を許可しない
+  no-misleading-character-class: error
+  # グローバルオブジェクトの呼び出しを許可しない
+  no-obj-calls: error
+  # Object.prototypesビルトインメソッドの直接の使用を許可しない
+  no-prototype-builtins: error
+  # 正規表現での複数のスペースの使用を許可しない
+  no-regex-spaces: error
+  # 空のスロットのある配列を許可しない
+  no-sparse-arrays: error
+  # テンプレートリテラル以外での${variable}の使用を許可しない
+  no-template-curly-in-string: error
+  # 混乱を招く複数行の表現を許可しない
+  no-unexpected-multiline: error
+  # 到達できないコードを許可しない
+  no-unreachable: error
+  # finally句でのreturn, throwを許可しない
+  no-unsafe-finally: error
+  # 括弧のないin, instanceofオペレータの否定を許可しない
+  no-unsafe-negation: error
+  # 競合の可能性があるawait/yieldの割り当てを許可しない
+  require-atomic-updates: error
+  # isNaN以外でのNaNとの比較を許可しない
+  use-isnan: error
+  # typeof式と有効な文字列との比較を強制する
+  valid-typeof:
+    - error
+    - requireStringLiterals: true
