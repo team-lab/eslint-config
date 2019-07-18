@@ -1,0 +1,25 @@
+# Node.js and CommonJS Rules
+---
+rules:
+  # コールバックが呼ばれたあとのreturnを強制する
+  callback-return: "off"
+  # グローバルスコープでのrequire()を強制する
+  global-require: error
+  # コールバックエラーの制御を強制する
+  handle-callback-err: "off"
+  # Bufferクラスのコンストラクタの使用を許可しない
+  no-buffer-constructor: error
+  # 一つのvar句でrequire()と変数宣言の混在を許可しない
+  no-mixed-requires: "off"
+  # new require()を許可しない
+  no-new-require: error
+  # __dirnameと__filenameの文字列での結合を許可しない
+  no-path-concat: error
+  # process.envの使用を許可しない
+  no-process-env: "off"
+  # process.exit()の使用を許可しない
+  no-process-exit: "off"
+  # 制限されたNode.jsモジュールの使用を許可しない
+  no-restricted-modules: "off"
+  # 同期処理を許可しない
+  no-sync: "off"
