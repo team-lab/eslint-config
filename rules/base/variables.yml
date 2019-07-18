@@ -1,0 +1,42 @@
+# Variables
+---
+extends:
+  - ./variables/index.js
+rules:
+  # 変数の初期化を強制または許可しない
+  init-declarations: error
+  # 定義した変数の削除を許可しない
+  no-delete-var: error
+  # 変数と重複するラベル名を許可しない
+  no-label-var: error
+  # 特定のグローバル変数の使用を許可しない
+  # confusing-browser-globalsを使用するためjsで定義
+  # no-restricted-globals: error
+  # 異なるスコープでも事前に定義された変数名の使用を許可しない
+  no-shadow: "off"
+  # 制限された変数名の定義を許可しない
+  no-shadow-restricted-names: error
+  # 未定義の変数の使用を許可しない
+  no-undef: error
+  # undefinedでの初期化を許可しない
+  no-undef-init: error
+  # 変数としてのundefinedの使用を許可しない
+  no-undefined: error
+  # 未使用の変数を許可しない
+  no-unused-vars:
+    - error
+      # グローバルスコープも含めすべての変数を対象にする
+    - vars: all
+      # 最後の引数のみを対象とする
+      args: after-used
+      # Restした際の兄弟プロパティを除外する
+      ignoreRestSiblings: true
+  # 宣言前の変数の使用を許可しない
+  no-use-before-define:
+    - error
+      # すべての関数を対象にする
+    - functions: true
+      # すべてのクラスを対象にする
+      classes: true
+      # すべての変数を対象にする
+      variables: true
