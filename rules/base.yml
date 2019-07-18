@@ -2,3 +2,4 @@
 extends:
   - ./rules/node.yml
   - ./base/errors.yml
+  - ./base/strict.yml

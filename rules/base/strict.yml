@@ -1,0 +1,5 @@
+# Strict Mode
+---
+rules:
+  # Strictを使用するかを統一する
+  strict: [error, never]
