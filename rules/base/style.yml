@@ -36,7 +36,7 @@ rules:
       # 分割代入で宣言された変数は除外する
       ignoreDestructuring: true
   # コメントの最初の文字を大文字に強制する
-  capitalized-comments: "off" # memo: 必要ないから無効化
+  capitalized-comments: "off"
   #	ケツカンマの有無を統一する
   comma-dangle:
     - error
