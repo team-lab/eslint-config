@@ -1,0 +1,152 @@
+# ECMAScript 6
+---
+rules:
+  # アロー関数のブレスの有無を統一する
+  arrow-body-style:
+    - error
+      # 必要な場合のみブレスを付ける
+    - as-needed
+      # Objectを返却する場合はreturnを強制する
+    - requireReturnForObjectLiteral: true
+  # アロー関数の引数のカッコの有無を統一する
+  arrow-parens:
+    - error
+      # 常にカッコを強制する
+    - always
+  # アロー関数のアロー前後のスペースの有無を統一する
+  arrow-spacing:
+    - error
+      # アロー直前にスペースを強制する
+    - before: true
+      # アロー直後にスペースを強制する
+      after: true
+  # 有効なsuper()の呼び出しがあるかどうかを確認する
+  constructor-super: error
+  # ジェネレータの * 前後のスペースの有無を統一する
+  generator-star-spacing:
+    - error
+      # * 直前にスペースを許可しない
+    - before: false
+      # * 直後にスペースを強制する
+      after: true
+  # クラスとして宣言された変数への代入を許可しない
+  no-class-assign: error
+  # 比較と混乱させる箇所のでアロー関数の使用を許可しない
+  no-confusing-arrow:
+    - error
+      # 比較式をカッコで囲えば許可する
+    - allowParens: true
+  # constで宣言された変数への代入を許可しない
+  no-const-assign: error
+  # 重複するクラスメンバの定義を許可しない
+  no-dupe-class-members: error
+  # 重複するモジュールからのインポートを許可しない
+  no-duplicate-imports:
+    - error
+      # export { foo } from 'bar' も対象にするか
+    - includeExports: false
+  # Symbolのnewを許可しない
+  no-new-symbol: error
+  # 指定したモジュールのimportを許可しない
+  no-restricted-imports: "off"
+  # super()前でのthisの使用を許可しない
+  no-this-before-super: error
+  # 不要な計算プロパティの使用を許可しない
+  no-useless-computed-key: error
+  # 不要なconstructorの定義を許可しない
+  no-useless-constructor: error
+  # 不要な分割代入でのリネームを許可しない
+  no-useless-rename:
+    - error
+      # importは除外するか
+    - ignoreImport: false
+      # exportは除外するか
+      ignoreExport: false
+      # 分割大ニュは除外するか
+      ignoreDestructuring: false
+  # var宣言子の使用を許可しない
+  no-var: error
+  # オブジェクトでの短縮記法を使用するかを統一する
+  object-shorthand:
+    - error
+      # 常に短縮記法を強制する
+    - always
+      # キーがクォーテーションで囲われている場合は短縮記法を許可しない
+    - avoidQuotes: true
+      # コンストラクタを除外する
+      ignoreConstructors: false
+      # 明示的にreturnの書かれたアロー関数を許可しない
+      avoidExplicitReturnArrows: false
+  # コールバックにアロー関数を使用することを強制する
+  prefer-arrow-callback:
+    - error
+      # 名前付き関数の使用を許可するか
+    - allowNamedFunctions: false
+      # thisがバインドされていない場合に関数式の使用を許可するか
+      allowUnboundThis: true
+  # 変数が再割り当てされない場合にconstの使用を強制する
+  prefer-const:
+    - error
+      # 分割代入でもすべての変数が再代入されない限りconstを強制する
+    - destructuring: 'any'
+      # 宣言から最初の代入までの変数の使用を無視するか
+      ignoreReadBeforeAssign: true
+  # オブジェクトと配列からの分割代入を強制する
+  prefer-destructuring:
+    - error
+      # 分割代入による変数宣言時に強制するか
+    - VariableDeclarator:
+        array: false
+        object: true
+      # 分割代入による代入時に強制するか
+      AssignmentExpression:
+        array: true
+        object: true
+      # リネームを伴う場合にも強制するか
+    - enforceForRenamedProperties: false
+  # Number.parseIntと基数オプションの使用を強制する
+  prefer-numeric-literals: error
+  # argumentsよりもSpread構文の使用を強制する
+  prefer-rest-params: error
+  # .applyよりもSpread構文の使用を強制する
+  prefer-spread: error
+  # 文字列結合よりもテンプレートリテラルの使用を強制する
+  prefer-template: error
+  # yieldのないジェネレータ関数を許可しない
+  require-yield: error
+  # Spread構文の...と変数名の間のスペースの有無を統一する
+  rest-spread-spacing:
+    - error
+      # スペースを許可しない
+    - never
+  # importの並びを統一する
+  sort-imports:
+    - error
+      # 大文字小文字を無視するか
+    - ignoreCase: false
+      # 宣言した変数名でのソートを無視するか
+      ignoreDeclarationSort: false
+      # importしたメンバーのソートを無視するか
+      ignoreMemberSort: false
+      # ソート順を指定する
+      memberSyntaxSortOrder:
+          # 変数宣言しないimport
+        - none
+          # * as fooされるimport
+        - all
+          # 単独の変数でのimport
+        - single
+          # メンバーとしてのimport
+        - multiple
+  # Symbolの説明を強制する
+  symbol-description: error
+  # テンプレートリテラルでの変数前後のスペースの有無を統一する
+  template-curly-spacing:
+    - error
+      # スペースを許可しない
+    - never
+  # yieldの * 前後のスペースの有無を統一する
+  yield-star-spacing:
+    - error
+      # 直後にスペースを強制する
+    - after
