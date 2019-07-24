@@ -2,9 +2,9 @@
   "name": "eslint-config-teamlab",
   "version": "0.0.0",
   "description": "teamLab's ESLint configuration",
-  "main": "recommended.js",
+  "main": "base.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext js ."
   },
   "repository": {
     "type": "git",
