@@ -7,7 +7,7 @@ rules:
       # 必要な場合のみブレスを付ける
     - as-needed
       # Objectを返却する場合はreturnを強制する
-    - requireReturnForObjectLiteral: true
+    - requireReturnForObjectLiteral: false
   # アロー関数の引数のカッコの有無を統一する
   arrow-parens:
     - error
@@ -120,24 +120,7 @@ rules:
       # スペースを許可しない
     - never
   # importの並びを統一する
-  sort-imports:
-    - error
-      # 大文字小文字を無視するか
-    - ignoreCase: false
-      # 宣言した変数名でのソートを無視するか
-      ignoreDeclarationSort: false
-      # importしたメンバーのソートを無視するか
-      ignoreMemberSort: false
-      # ソート順を指定する
-      memberSyntaxSortOrder:
-          # 変数宣言しないimport
-        - none
-          # * as fooされるimport
-        - all
-          # 単独の変数でのimport
-        - single
-          # メンバーとしてのimport
-        - multiple
+  sort-imports: "off"
   # Symbolの説明を強制する
   symbol-description: error
   # テンプレートリテラルでの変数前後のスペースの有無を統一する
