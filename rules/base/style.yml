@@ -1,0 +1,526 @@
+# Stylistic Issues
+---
+rules:
+  # 配列のカッコ直前・直後での改行を統一する
+  array-bracket-newline:
+    - error
+      # 配列での改行が一貫されていれば許可する
+    - consistent
+  # 配列のカッコ直前・直後でのスペースの有無を統一する
+  array-bracket-spacing:
+    - error
+      # 配列のスペースを許可しない
+    - never
+  # 配列の要素前後での改行を統一する
+  array-element-newline:
+    - error
+      # 配列での改行が一貫されていれば許可する
+    - consistent
+  # ブロックの開始・終了前後でのスペースの有無を統一する
+  block-spacing:
+    - error
+      # スペースの付与を強制する
+    - always
+  # ブレスのスタイルを統一する
+  brace-style:
+    - error
+      # elseやcatchのブレスを改行させない
+    - 1tbs
+      # １行での記載を許可するか
+    - allowSingleLine: false
+  # キャメルケースを強制する
+  camelcase:
+    - error
+      # プロパティも常に強制する
+    - properties: always
+      # 分割代入で宣言された変数は除外する
+      ignoreDestructuring: true
+  # コメントの最初の文字を大文字に強制する
+  capitalized-comments: "off"
+  #	ケツカンマの有無を統一する
+  comma-dangle:
+    - error
+      # 複数行で定義する場合のみケツカンマを強制する
+    - arrays: only-multiline
+      objects: only-multiline
+      imports: only-multiline
+      exports: only-multiline
+      functions: only-multiline
+  # カンマ前後のスペースの有無を統一する
+  comma-spacing:
+    - error
+      # カンマの前のスペースを許可しない
+    - before: false
+      # カンマ後のスペースを強制する
+      after: true
+  # カンマのスタイル
+  comma-style:
+    - error
+      # 複数行に渡る場合は後ろにカンマを付与する
+    - last
+      # すべてにこのルールを適用
+    - ArrayExpression: false
+      ArrayPattern: false
+      ArrowFunctionExpression: false
+      CallExpression: false
+      FunctionDeclaration: false
+      FunctionExpression: false
+      ImportDeclaration: false
+      ObjectExpression: false
+      ObjectPattern: false
+      VariableDeclaration: false
+      NewExpression: false
+  # foo[bar]で要素を指定するときのカッコ前後のスペースの有無を統一する
+  computed-property-spacing:
+    - error
+      # スペースを許可しない
+    - never
+  # thisの直接の使用を許可しない
+  consistent-this: "off"
+  # ファイルの最後の空行の有無を統一する
+  eol-last:
+    - error
+      # 空行を強制する
+    - always
+  # 関数呼び出しでの関数名とカッコの間のスペースの有無を統一する
+  func-call-spacing:
+    - error
+      # スペースを許可しない
+    - never
+      # カッコ直前での改行を許可しない
+    - allowNewlines: false
+  # 関数名の定義と同じ名前の変数・プロパティへの代入を強制する
+  func-name-matching:
+    - error
+    - always
+      # プロパティデスクリプタは除外する
+    - thinkPropertyDescriptor: false
+      # CommonJSでのエクスポートは除外する
+      includeCommonJSModuleExports: false
+  # 関数名の付与を強制する
+  func-names:
+    - warn
+    - always
+  # 関数を変数宣言と関数式のいずれかに統一する
+  func-style:
+    - error
+      # 関数式での定義を強制する
+    - declaration
+      # アロー関数の使用を許可する
+    - allowArrowFunctions: true
+  # 引数内での改行を統一する
+  function-paren-newline:
+    - error
+      # 引数内での改行が一貫されていれば許可する
+    - consistent
+  # 指定した識別子を許可しない
+  id-blacklist: "off"
+  # 指定した最小・最大の文字数を満たさない識別子を許可しない
+  id-length: "off"
+  # 指定した正規表現でない識別子を許可しない
+  id-match: "off"
+  # アロー関数の値返却前の改行の有無を統一する
+  implicit-arrow-linebreak:
+    - error
+      # 改行を許可しない
+    - beside
+  # インデントを統一する
+  indent:
+    - error
+    - 2
+      # Switch文のケース内でのインデントレベル
+    - SwitchCase: 1
+      # 宣言子（const, let）のインデントレベル
+      VariableDeclarator: 1
+      # 即時実行関数内でのインデントレベル
+      outerIIFEBody: 1
+      # プロパティチェーンでのインデントレベル
+      MemberExpression: 1
+      # 関数でのインデントレベル
+      FunctionDeclaration:
+        parameters: 1
+        body: 1
+      # 関数呼び出しでのインデントレベル
+      CallExpression:
+        arguments: 1
+      # 配列要素のインデントレベル
+      ArrayExpression: 1
+      # オブジェクトのプロパティのインデントレベル
+      ObjectExpression: 1
+      # import文でのインデントレベル
+      ImportDeclaration: 1
+      # ネストされた三項演算子をインデントさせないか
+      flatTernaryExpressions: false
+      # インデントを無視するASTノードのセレクタ
+      ignoredNodes: []
+      # コメントのインデントを無視するか
+      ignoreComments: false
+  # JSXでのクォーテーションを統一する
+  jsx-quotes:
+    - error
+      # ダブルクォーテーションを強制
+    - prefer-double
+  # オブジェクトのコロン前後のスペースの有無を統一する
+  key-spacing:
+    - error
+      # コロン直前のスペースを許可しない
+    - beforeColon: false
+      # コロン直後のスペースを強制する
+      afterColon: true
+      # コロンや値の位置を揃えない
+      mode: strict
+  # キーワード前後のスペースの有無を統一する
+  keyword-spacing:
+    - error
+      # キーワードの前後に常にスペースを強制する
+    - before: true
+      after: true
+  # ラインコメントの位置を統一する
+  line-comment-position: "off"
+  # 改行の文字コードを \n か \r\n のいずれかに統一する
+  linebreak-style:
+    - error
+      # \n に統一する
+    - unix
+  # コメント前後の改行を強制する
+  lines-around-comment: "off"
+  # クラスメンバ間の改行の有無を統一する
+  lines-between-class-members:
+    - error
+      # 常に改行を矯正する
+    - always
+      # １行のメンバを除外する
+    - exceptAfterSingleLine: fase
+  # 最大のネストの深さ
+  max-depth:
+    - error
+      # 最大のネスト数
+    - max: 4
+  # １行の最大の文字数
+  max-len:
+    - error
+      # コードの１行の最大文字数
+    - code: 120
+      # タブの文字数
+      tabWidth: 2
+      # コメントの最大文字数
+      comments: 100
+      # 除外するパターン
+      ignorePattern: ""
+      # コメントを除外する
+      ignoreComments: false
+      # コード末尾のコメントを除外する
+      ignoreTrailingComments: false
+      # URLを除外する
+      ignoreUrls: true
+      # 文字列を除外する
+      ignoreStrings: true
+      # テンプレートリテラルを除外する
+      ignoreTemplateLiterals: true
+      # 正規表現を除外する
+      ignoreRegExpLiterals: true
+  # ファイルの最大の行数
+  max-lines: "off"
+  # 関数あたりの最大の行数
+  max-lines-per-function: "off"
+  # 最大のコールバックのネスト数
+  max-nested-callbacks: "off"
+  # 最大の引数の個数
+  max-params: "off"
+  # 最大のステートメント数
+  max-statements: "off"
+  # １行あたりの最大のステートメント数
+  max-statements-per-line: "off"
+  # マルチラインコメントのスタイルを統一する
+  multiline-comment-style: "off"
+  # 複数行の三項演算子の改行の有無を統一する
+  multiline-ternary: "off"
+  # コンストラクタ名が大文字で始まることを強制する
+  new-cap:
+    - error
+      # new演算子を使用する関数が大文字で始まることを強制する
+    - newIsCap: true
+      # 小文字で始まることを許容する関数名
+      newIsCapExceptions: []
+      # 大文字で始まる関数にnew演算子が使用されることを強制する
+      capIsNew: false
+      # new演算子を使用しなくてよい関数名
+      capIsNewExceptions: []
+  # 引数のないコンストラクタでもカッコを矯正する
+  new-parens: error
+  # メソッドチェーンでの改行を強制する
+  newline-per-chained-call:
+    - error
+      # 改行なしでのメソッドチェーンを許可する深さ
+    - ignoreChainWithDepth: 2
+  # Arrayコンストラクタの使用を許可しない
+  no-array-constructor: error
+  # ビット演算子の使用を許可しない
+  no-bitwise: error
+  # continue文の使用を許可しない
+  no-continue: "off"
+  # インラインコメントを許可しない
+  no-inline-comments: "off"
+  # elseブロックに単独のifがあることを許可しない
+  no-lonely-if: error
+  # 異なる演算子の混在を許可しない
+  no-mixed-operators:
+    - error
+      # 混在を許可しない演算子のグループ
+      # デフォルト + %と**の混在を許可しない
+    - groups:
+        - ['%', '**']
+        - ['%', '+']
+        - ['%', '-']
+        - ['%', '*']
+        - ['%', '/']
+        - ['**', '+']
+        - ['**', '-']
+        - ['**', '*']
+        - ['**', '/']
+        - ['&', '|', '^', '~', '<<', '>>', '>>>']
+        - ['==', '!=', '===', '!==', '>', '>=', '<', '<=']
+        - ['&&', '||']
+        - ['in', 'instanceof']
+      # 優先度が同じ演算子でも混在を許可しない
+      allowSamePrecedence: false
+  # インデントのタブとスペースの混在を許可しない
+  no-mixed-spaces-and-tabs: error
+  # 同時代入を許可しない
+  no-multi-assign: error
+  # 複数の空行を許可しない
+  no-multiple-empty-lines:
+    - error
+      # 空行を許可する行数
+    - max: 2
+      # ファイル末尾に許可する空行の行数
+      maxEOF: 1
+  # 否定条件を許可しない
+  no-negated-condition: error
+  # ネストした三項演算子を許可しない
+  no-nested-ternary: error
+  # Objectコンストラクタの使用を許可しない
+  no-new-object: error
+  # ++/-- の使用を許可しない
+  no-plusplus:
+    - error
+      # for文内での使用を許可する
+    - allowForLoopAfterthoughts: true
+  # 指定されたASTセレクタの構文の使用を許可しない
+  no-restricted-syntax:
+    - error
+    - []
+  # タブの使用を許可しない
+  no-tabs: error
+  # 三項演算子の使用を許可しない
+  no-ternary: "off"
+  # 行末のスペースを許可しない
+  no-trailing-spaces:
+    - error
+      # 空行でも行末のスペースを許可しない
+    - skipBlankLines: false
+      # コメントでも行末のスペースを許可しない
+      ignoreComments: false
+  # 変数名前後でのアンダースコアの使用を許可しない
+  no-underscore-dangle:
+    - error
+      # 許可する変数名
+    - allow: []
+      # thisに続くメンバー名でも前後のアンダースコアの使用を許可するか
+      allowAfterThis: false
+      # superに続くメンバー名でも前後のアンダースコアの使用を許可するか
+      allowAfterSuper: false
+      # メソッド名の前後のアンダースコアの使用を許可するか
+      enforceInMethodNames: false
+  # Booleanのみを返す三項演算子の使用を許可しない
+  no-unneeded-ternary:
+    - error
+      # 初期値の代入での三項演算子の使用を許可しない
+    - defaultAssignment: false
+  # プロパティ直前のスペースを許可しない
+  no-whitespace-before-property: error
+  # ブロックのない式の位置を統一する
+  nonblock-statement-body-position:
+    - error
+      # 改行を許可しない
+    - beside
+  # ブレス内での改行を統一する
+  object-curly-newline:
+    - error
+      # オブジェクト
+    - ObjectExpression:
+        minProperties: 4
+        multiline: true
+        consistent: true
+      # 分割代入
+      ObjectPattern:
+        minProperties: 4
+        multiline: true
+        consistent: true
+      # import
+      ImportDeclaration:
+        minProperties: 4
+        multiline: true
+        consistent: true
+      # export
+      ExportDeclaration:
+        minProperties: 4
+        multiline: true
+        consistent: true
+  # オブジェクトのブレス前後のスペースの有無を統一する
+  object-curly-spacing:
+    - error
+      # 常にスペースを強制する
+    - always
+  # オブジェクトのプロパティでの改行の有無を統一する
+  object-property-newline:
+    - error
+      # ワンラインでのプロパティの定義を許可する
+    - allowAllPropertiesOnSameLine: true
+  # １つの宣言子で複数の変数を宣言させるか統一する
+  one-var:
+    - error
+      # 複数の変数の宣言を許可しない
+    - never
+  # 変数宣言時の改行の有無を統一する
+  one-var-declaration-per-line:
+    - error
+      # 常に改行を矯正する
+    - always
+  # 代入時に省略形を使用するかを統一する
+  operator-assignment:
+    - error
+      # 省略形の使用を強制する
+    - always
+  # 演算子前後のスペースの有無を統一する
+  operator-linebreak:
+    - error
+      # 演算子の前に改行させる
+    - before
+    - overrides:
+        # 代入前後での改行を許可しない
+        =: none
+  # ブロック開始・終了前後での空行の有無を統一する
+  padded-blocks:
+    - error
+      # ブロックでは空行を許可しない
+    - blocks: never
+      # クラスでは空行を許可しない
+      classes: never
+      # スイッチ文では空行を許可しない
+      switches: never
+  # 式・文間の空行の有無を統一する
+  padding-line-between-statements:
+    - error
+      # returnの前に空行を強制する
+    - blankLine: always
+      prev: "*"
+      next: return
+  # Object.assign()ではなくSpread構文の利用を強制する
+  prefer-object-spread: error
+  # プロパティ名のクォーテーションの有無を統一する
+  quote-props:
+    - error
+      # 必要な場合のみクォーテーションを付与する
+    - as-needed
+      # 予約後の場合はクォーテーションを付与を強制する
+    - keywords: false
+      # 必要のないプロパティ名へのクォーテーションの付与を許可しない
+      unnecessary: true
+      # 数字のプロパティ名へのクォーテーションの付与を強制する
+      numbers: false
+  # クォーテーションを統一する
+  quotes:
+    - error
+    - single
+      # 別のクォーテーションが使用される場合は無視する
+    - avoidEscape: true
+      # テンプレートリテラル単独での使用を許可する
+      allowTemplateLiterals: false
+  # セミコロンの有無を統一する
+  semi:
+    - error
+      # 常にセミコロンの付与を強制する
+    - always
+  # セミコロン前後のスペースの有無を統一する
+  semi-spacing:
+    - error
+      # セミコロン直前のスペースを許可しない
+    - before: false
+      # セミコロン直後のスペースを強制する
+      after: true
+  # 改行時のセミコロンの位置を統一する
+  semi-style:
+    - error
+      # 行末にセミコロンを付与する
+    - last
+  # オブジェクトのキーの並びを統一する
+  sort-keys: "off"
+  # 変数宣言時の並びを統一する
+  sort-vars: "off"
+  # ブロック開始直前のスペースの有無を統一する
+  space-before-blocks:
+    - error
+      # 常にスペースを強制する
+    - always
+  # 関数名とカッコの間のスペースの有無を統一する
+  space-before-function-paren:
+    - error
+      # 匿名関数ではスペースを強制する
+    - anonymous: always
+      # 関数式ではスペースを強制する
+      named: always
+      # 非同期関数ではスペースを強制する
+      asyncArrow: always
+  # カッコの開始・終了前後でのスペースの有無を統一する
+  space-in-parens:
+    - error
+      # スペースの付与を許可しない
+    - never
+  # 演算子前後のスペースを強制する
+  space-infix-ops: error
+  # 単項演算子の前後のスペースの有無を統一する
+  space-unary-ops:
+    - error
+      # new/delete/typeofなどの単行ワードでは前後のスペースの付与を強制する
+    - words: true
+      # +/++/!などの単項演算子では前後のスペースの付与を許可しない
+      nonwords: false
+      # 個別でスペースの有無を設定する
+      overrides: {}
+  # コメント開始直後のスペースの有無を統一する
+  spaced-comment:
+    - error
+      # ラインコメント
+    - line:
+        # 除外する文字
+        exceptions: []
+        # 除外する先頭文字
+        markers: []
+      # ブロックコメント
+      block:
+        # 除外する文字
+        exceptions: []
+        # 除外する先頭文字
+        markers: []
+        # 終了前にもスペースを強制する
+        balanced: true
+  # Switch文のケースのコロン前後のスペースの有無を統一する
+  switch-colon-spacing:
+    - error
+      # コロン直前のスペースを許可しない
+    - before: false
+      # コロン直後にスペースを強制する
+      after: true
+  # タグ付きテンプレートリテラルでのスペースの有無を統一する
+  template-tag-spacing:
+    - error
+      # スペースを許可しない
+    - never
+  # UnicodeのBOMの有無を統一する
+  unicode-bom:
+    - error
+      # BOMを禁止する
+    - never
+  # 正規表現をカッコで囲うことを強制する
+  wrap-regex: "off"
