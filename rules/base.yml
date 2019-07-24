@@ -1,4 +1,6 @@
 ---
 extends:
-  - ./rules/node.yml
   - ./base/errors.yml
+  - ./base/best-practices.yml
+  - ./base/variables.yml
+  - ./rules/node.yml

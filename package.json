@@ -18,5 +18,8 @@
   "homepage": "https://github.com/team-lab/eslint-config#readme",
   "devDependencies": {
     "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "confusing-browser-globals": "^1.0.7"
   }
 }
