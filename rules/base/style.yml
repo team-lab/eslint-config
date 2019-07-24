@@ -26,8 +26,8 @@ rules:
     - error
       # elseやcatchのブレスを改行させない
     - 1tbs
-      # １行での記載を許可する
-    - allowSingleLine: true
+      # １行での記載を許可するか
+    - allowSingleLine: false
   # キャメルケースを強制する
   camelcase:
     - error
@@ -167,6 +167,8 @@ rules:
     - beforeColon: false
       # コロン直後のスペースを強制する
       afterColon: true
+      # コロンや値の位置を揃えない
+      mode: strict
   # キーワード前後のスペースの有無を統一する
   keyword-spacing:
     - error
@@ -174,12 +176,7 @@ rules:
     - before: true
       after: true
   # ラインコメントの位置を統一する
-  line-comment-position:
-    - error
-      # 新しい行にコメントを記載する
-    - position: above
-      # デフォルトの除外パターンを無効化する
-      applyDefaultIgnorePatterns: false
+  line-comment-position: "off"
   # 改行の文字コードを \n か \r\n のいずれかに統一する
   linebreak-style:
     - error
@@ -195,12 +192,15 @@ rules:
       # １行のメンバを除外する
     - exceptAfterSingleLine: fase
   # 最大のネストの深さ
-  max-depth: "off"
+  max-depth:
+    - error
+      # 最大のネスト数
+    - max: 4
   # １行の最大の文字数
   max-len:
     - error
       # コードの１行の最大文字数
-    - code: 100
+    - code: 120
       # タブの文字数
       tabWidth: 2
       # コメントの最大文字数
@@ -252,13 +252,13 @@ rules:
   newline-per-chained-call:
     - error
       # 改行なしでのメソッドチェーンを許可する深さ
-    - ignoreChainWithDepth: 4
+    - ignoreChainWithDepth: 2
   # Arrayコンストラクタの使用を許可しない
   no-array-constructor: error
   # ビット演算子の使用を許可しない
   no-bitwise: error
   # continue文の使用を許可しない
-  no-continue: error
+  no-continue: "off"
   # インラインコメントを許可しない
   no-inline-comments: "off"
   # elseブロックに単独のifがあることを許可しない
@@ -296,7 +296,7 @@ rules:
       # ファイル末尾に許可する空行の行数
       maxEOF: 1
   # 否定条件を許可しない
-  no-negated-condition: "off"
+  no-negated-condition: error
   # ネストした三項演算子を許可しない
   no-nested-ternary: error
   # Objectコンストラクタの使用を許可しない
@@ -409,8 +409,6 @@ rules:
       classes: never
       # スイッチ文では空行を許可しない
       switches: never
-      # １行でのブロックの記載を許可する
-      allowSingleLineBlocks: true
   # 式・文間の空行の有無を統一する
   padding-line-between-statements:
     - error
@@ -496,15 +494,15 @@ rules:
       # ラインコメント
     - line:
         # 除外する文字
-        exceptions: ["-", "+"]
+        exceptions: []
         # 除外する先頭文字
-        markers: ["=", "!"]
+        markers: []
       # ブロックコメント
       block:
         # 除外する文字
-        exceptions: ["-", "+"]
+        exceptions: []
         # 除外する先頭文字
-        markers: ["=", "!"]
+        markers: []
         # 終了前にもスペースを強制する
         balanced: true
   # Switch文のケースのコロン前後のスペースの有無を統一する
