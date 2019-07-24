@@ -5,12 +5,17 @@ rules:
   "@typescript-eslint/adjacent-overload-signatures": error # 同名のオーバーロードを並べて定義することを強制する
   "@typescript-eslint/array-type": # 配列の表現をT[]かArray<T>に統一する
     - error
-    - array-simple # Tがシンプルな型の場合のみT[]を強制する
+    - generic # 常にジェネリックでの記載を強制する
   "@typescript-eslint/await-thenable": error # Promiseな値以外でのawaitの使用を許可しない
   "@typescript-eslint/ban-ts-ignore": "off" # @ts-ignoreの使用を許可しない
   "@typescript-eslint/ban-types": error # 特定のランタイムオブジェクトの型としての使用を許可しない
   camelcase: "off" # 競合するESLint標準のルールをオフに
-  "@typescript-eslint/camelcase": error # 変数名をキャメルケースに強制する
+  "@typescript-eslint/camelcase": # 変数名をキャメルケースに強制する
+    - error
+      # プロパティも常に強制する
+    - properties: always
+      # 分割代入で宣言された変数は除外する
+      ignoreDestructuring: true
   "@typescript-eslint/class-name-casing": error # クラス名をパスカルケースに強制する
   "@typescript-eslint/explicit-function-return-type": # 関数の返り値の明示的な型定義を強制する
     - error
@@ -76,8 +81,8 @@ rules:
   no-use-before-define: "off" # 競合するESLint標準のルールをオフに
   "@typescript-eslint/no-use-before-define": # 定義前の変数・関数・クラスの使用を許可しない
     - error
-    - functions: false # 関数
-      classes: false # クラス
+    - functions: true # 関数
+      classes: true # クラス
       variables: true # 変数
       typedefs: true # 型定義
   no-useless-constructor: "off" # 競合するESLint標準のルールをオフに
@@ -91,12 +96,12 @@ rules:
   "@typescript-eslint/prefer-regexp-exec": error # gフラグを指定しない正規表現のマッチではmatchよりもexecの使用を推奨する
   "@typescript-eslint/prefer-string-starts-ends-with": error # 前方一致、後方一致のマッチではstartsWith/endsWithの使用を推奨する
   "@typescript-eslint/promise-function-async": "off" # 非同期関数にasyncの付与を強制する
-  "@typescript-eslint/require-array-sort-compare": "off" # Array.sort()でのコールバック関数の指定を強制する
-  "@typescript-eslint/restrict-plus-operands": "off" # 異なる型どうしでの+演算子の使用を許可しない
+  "@typescript-eslint/require-array-sort-compare": error # Array.sort()でのコールバック関数の指定を強制する
+  "@typescript-eslint/restrict-plus-operands": error # 異なる型どうしでの+演算子の使用を許可しない
   "@typescript-eslint/semi": "off" # セミコロンの有無を統一する
   "@typescript-eslint/type-annotation-spacing": # 型注釈でのスペースの有無を統一する
     - error
     - before: false
       after: true
-  "@typescript-eslint/unbound-method": "off" # メソッドが期待されるスコープ内でコールされることを強制する
+  "@typescript-eslint/unbound-method": error # メソッドが期待されるスコープ内でコールされることを強制する
   "@typescript-eslint/unified-signatures": error # 不必要なオーバーライドを許可しない
