@@ -44,7 +44,7 @@ rules:
     - multiline:
         delimiter: semi
         requireLast: true
-      singlelline:
+      singleline:
         delimiter: semi
         requireLast: false
   "@typescript-eslint/member-naming": "off" # メンバー変数の命名規則を統一する
