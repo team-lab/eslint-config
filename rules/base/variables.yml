@@ -13,7 +13,7 @@ rules:
   # confusing-browser-globalsを使用するためjsで定義
   # no-restricted-globals: error
   # 異なるスコープでも事前に定義された変数名の使用を許可しない
-  no-shadow: "off"
+  no-shadow: error
   # 制限された変数名の定義を許可しない
   no-shadow-restricted-names: error
   # 未定義の変数の使用を許可しない
