@@ -42,13 +42,11 @@ rules:
   no-extra-parens:
     - "error"
     - all
-    -
-      conditionalAssign: true
+    - conditionalAssign: true
       returnAssign: true
       nestedBinaryExpressions: false
       ignoreJSX: all
       enforceForArrowConditionals: false
-      functions: error
   # 不必要なセミコロンを許可しない
   no-extra-semi: error
   # 関数の再代入を許可しない

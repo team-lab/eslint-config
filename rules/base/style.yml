@@ -59,17 +59,18 @@ rules:
       # 複数行に渡る場合は後ろにカンマを付与する
     - last
       # すべてにこのルールを適用
-    - ArrayExpression: false
-      ArrayPattern: false
-      ArrowFunctionExpression: false
-      CallExpression: false
-      FunctionDeclaration: false
-      FunctionExpression: false
-      ImportDeclaration: false
-      ObjectExpression: false
-      ObjectPattern: false
-      VariableDeclaration: false
-      NewExpression: false
+    - exceptions:
+        ArrayExpression: false
+        ArrayPattern: false
+        ArrowFunctionExpression: false
+        CallExpression: false
+        FunctionDeclaration: false
+        FunctionExpression: false
+        ImportDeclaration: false
+        ObjectExpression: false
+        ObjectPattern: false
+        VariableDeclaration: false
+        NewExpression: false
   # foo[bar]で要素を指定するときのカッコ前後のスペースの有無を統一する
   computed-property-spacing:
     - error
@@ -87,14 +88,12 @@ rules:
     - error
       # スペースを許可しない
     - never
-      # カッコ直前での改行を許可しない
-    - allowNewlines: false
   # 関数名の定義と同じ名前の変数・プロパティへの代入を強制する
   func-name-matching:
     - error
     - always
       # プロパティデスクリプタは除外する
-    - thinkPropertyDescriptor: false
+    - considerPropertyDescriptor: false
       # CommonJSでのエクスポートは除外する
       includeCommonJSModuleExports: false
   # 関数名の付与を強制する
@@ -190,7 +189,7 @@ rules:
       # 常に改行を矯正する
     - always
       # １行のメンバを除外する
-    - exceptAfterSingleLine: fase
+    - exceptAfterSingleLine: false
   # 最大のネストの深さ
   max-depth:
     - error
@@ -309,7 +308,7 @@ rules:
   # 指定されたASTセレクタの構文の使用を許可しない
   no-restricted-syntax:
     - error
-    - []
+    # - []
   # タブの使用を許可しない
   no-tabs: error
   # 三項演算子の使用を許可しない
@@ -489,22 +488,7 @@ rules:
       # 個別でスペースの有無を設定する
       overrides: {}
   # コメント開始直後のスペースの有無を統一する
-  spaced-comment:
-    - error
-      # ラインコメント
-    - line:
-        # 除外する文字
-        exceptions: []
-        # 除外する先頭文字
-        markers: []
-      # ブロックコメント
-      block:
-        # 除外する文字
-        exceptions: []
-        # 除外する先頭文字
-        markers: []
-        # 終了前にもスペースを強制する
-        balanced: true
+  spaced-comment: "off"
   # Switch文のケースのコロン前後のスペースの有無を統一する
   switch-colon-spacing:
     - error

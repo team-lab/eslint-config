@@ -14,7 +14,7 @@ rules:
   class-methods-use-this:
     - warn
       # 除外するメソッド名
-    - exceptMethod: []
+    # - exceptMethod: []
   # 指定した上限以上の循環的複雑度を許可しない
   complexity: [error, 10]
   # 条件式で返却値があればもう一方の条件でも値を返すよう強制する
@@ -100,7 +100,6 @@ rules:
     - error
       # 行末のコメントでは許可する
     - ignoreEOLComments: true
-    - Property: true
   # 文字列リテラルでの改行を許可しない
   no-multi-str: error
   # 変数に格納されないnewを許可しない
