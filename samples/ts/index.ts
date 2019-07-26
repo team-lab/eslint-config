@@ -2,6 +2,6 @@
  * @file TypeScriptルールの動作確認用
  */
 
-const foo: number = 1;
+import bar from './foo';
 
-console.log("happen" + foo)
+console.log("happen" + bar)
