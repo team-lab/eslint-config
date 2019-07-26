@@ -1,0 +1,112 @@
+# eslint-plugin-import
+---
+plugins:
+  - import
+settings:
+rules:
+  # Static analysis
+  # 解決できないモジュールの指定を許可しない
+  import/no-unresolved:
+    - error
+      # require()も対象にするか
+    - commonjs: true
+      # 大文字小文字を区別するか
+      caseSensitive: true
+  # すべての名前付きimportがあるときexportされていることを確認する
+  import/named: error
+  # デフォルトのimportがあるときデフォルトのexportがあることを確認する
+  import/default: "off"
+  # * as fooでimportしたとき間接参照されるプロパティがexportされていることを確認する
+  import/namespace: "off"
+  # モジュールの参照を禁止するパスを指定する
+  import/no-restricted-paths: "off"
+  # 絶対パスを使用したモジュールの参照を許可しない
+  import/no-absolute-path: "off"
+  # require()の引数への文字列以外の指定を許可しない
+  import/no-dynamic-require: "off"
+  # 参照を許可するモジュールへのパスのパターンを指定する
+  import/no-internal-modules: "off"
+  # Webpack loader形式でのパス指定を許可しない
+  import/no-webpack-loader-syntax: error
+  # 自分自身を参照することを許可しない
+  import/no-self-import: error
+  # モジュールの循環参照を許可しない
+  import/no-cycle: error
+  # 不必要なパスの指定を許可しない
+  import/no-useless-path-segments:
+    - error
+      # 明示的な index の指定を許可しないか
+    - noUselessIndex: true
+  # 親ディレクトリ以上にいるモジュールの参照を許可しない
+  import/no-relative-parent-imports: error
+  # 未使用のモジュールの定義を許可しない
+  import/no-unused-modules:
+    - error
+      # exportしていないファイルを許可しないか
+    - missingExports: false
+      # exportしているが使用されていないモジュールを許可しないか
+    - unusedExports: true
+  # Helpful warnings
+  # 重複する名前のexportを許可しない
+  import/export: error
+  # デフォルトのimport/exportで使用されている名前の使用を許可しない
+  import/no-named-as-default: error
+  # export defaultされた値からプロパティでの他のexportされた名前へのアクセスを許可しない
+  import/no-named-as-default-member: error
+  # @deprecatedコメントが付いた名前の使用を許可しない
+  import/no-deprecated: "off"
+  # package.jsonに記載されていないパッケージのimportを許可しない
+  import/no-extraneous-dependencies: "off"
+  # exportで使用するvarとletで宣言された変数の使用を許可しない
+  import/no-mutable-exports: error
+  # Module systems
+  # exportのないモジュールの定義を許可しない
+  import/unambiguous: error
+  # CommonJSの構文を許可しない
+  import/no-commonjs: "off"
+  # AMDの構文を許可しない
+  import/no-amd: error
+  # Node.jsの組み込みモジュールの使用を許可しない
+  import/no-nodejs-modules: "off"
+  # importがそれ以外よりはじめに宣言されることを強制する
+  import/first: error
+  # 最後のexportの後にそれ以外を記載することを許可しない
+  import/exports-last: error
+  # 重複するモジュールからのimportを許可しない
+  import/no-duplicates: error
+  # Namespaceのimportを許可しない
+  import/no-namespace: "off"
+  # 拡張子の有無を統一する
+  import/extensions:
+    - error
+      # パッケージの場合は除外する
+    - ignorePackages
+      # 拡張子ごとに有無を設定
+    - js: never
+      jsx: never
+      ts: never
+      tsx: never
+      vue: always
+      json: always
+  # importの順番を統一する
+  import/order: "off"
+  # import後に空行を強制する
+  import/newline-after-import: error
+  # exportが１つしかない場合はexport defaultの使用を強制する
+  import/prefer-default-export: error
+  # １ファイルでの最大の依存モジュール数を指定する
+  import/max-dependencies: "off"
+  # import 'foo'を許可しない
+  import/no-unassigned-import: "off"
+  # import { default as foo } from 'foo'を許可しない
+  import/no-named-default: error
+  # export defaultを許可しない
+  import/no-default-export: "off"
+  # 名前付きexportを許可しない
+  import/no-named-export: "off"
+  # export defaultへの値の直接の指定を許可しない
+  import/no-anonymous-default-export: "off"
+  # exportのグループ化を強制する
+  import/group-exports: "off"
+  # 動的importでのチャンク名の指定を強制する
+  import/dynamic-import-chunkname: "off"
