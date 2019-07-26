@@ -8,6 +8,9 @@ module.exports = {
       jsx: false
     }
   },
-  plugins: ['@typescript-eslint'],
-  extends: ['./rules/base.yml', './rules/typescript.yml']
+  extends: [
+    './rules/base.yml',
+    './rules/typescript.yml',
+    'plugin:import/typescript'
+  ]
 };

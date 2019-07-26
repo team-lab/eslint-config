@@ -2,7 +2,6 @@
 ---
 plugins:
   - import
-settings:
 rules:
   # Static analysis
   # 解決できないモジュールの指定を許可しない
@@ -45,7 +44,7 @@ rules:
       # exportしていないファイルを許可しないか
     - missingExports: false
       # exportしているが使用されていないモジュールを許可しないか
-    - unusedExports: true
+      unusedExports: true
   # Helpful warnings
   # 重複する名前のexportを許可しない
   import/export: error
@@ -61,7 +60,7 @@ rules:
   import/no-mutable-exports: error
   # Module systems
   # exportのないモジュールの定義を許可しない
-  import/unambiguous: error
+  import/unambiguous: "off"
   # CommonJSの構文を許可しない
   import/no-commonjs: "off"
   # AMDの構文を許可しない
