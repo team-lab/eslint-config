@@ -1,8 +1,8 @@
 # eslint-config-teamlab
 
-This is [teamLab](https://teamlab.art)'s standard ESLint configuration.
+This is [teamLab](https://team-lab.com)'s standard ESLint configuration.
 
-これは[teamLab](https://teamlab.art)の標準ESLint設定です。
+これは[teamLab](https://team-lab.com)の標準ESLint設定です。
 
 各プロジェクトではこの設定をベースにESLintルールを設定してください。
 
@@ -21,7 +21,6 @@ npm i -D eslint eslint-config-teamlab eslint-plugin-import
 #### .eslintrc
 
 ```yml
----
 extends:
   - teamlab
 ```
@@ -33,7 +32,8 @@ extends:
 ```sh
 yarn add -D \
   eslint eslint-config-teamlab eslint-plugin-import \
-  @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-typescript
+  @typescript-eslint/parser @typescript-eslint/eslint-plugin \
+  eslint-config-typescript typescript
 # or
 npm i -D \
   eslint eslint-config-teamlab eslint-plugin-import \
@@ -44,7 +44,8 @@ npm i -D \
 #### .eslintrc
 
 ```yml
----
+parserOptions:
+  project: ./tsconfig.json # tsconfig.json path here
 extends:
   - teamlab/typescript
 ```
