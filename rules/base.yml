@@ -1,4 +1,10 @@
 ---
+plugins:
+  - import
+settings:
+  import/resolver:
+    node:
+      extensions:
 extends:
   - ./base/errors.yml
   - ./base/best-practices.yml
@@ -7,3 +13,4 @@ extends:
   - ./base/node.yml
   - ./base/style.yml
   - ./base/es6.yml
+  - ./base/imports.yml

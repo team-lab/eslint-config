@@ -12,5 +12,6 @@ module.exports = {
       jsx: true
     }
   },
+  plugins: ['import'],
   extends: ['./rules/base.yml']
 };

@@ -2,4 +2,6 @@
  * @file JavaScriptルールの動作確認用
  */
 
-console.log("happen")
+import foo from './foo';
+
+console.log('happen');

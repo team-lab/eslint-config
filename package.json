@@ -5,8 +5,8 @@
   "main": "base.js",
   "scripts": {
     "lint": "eslint --ext js .",
-    "test:js": "eslint --ext js samples/js",
-    "test:ts": "eslint --ext ts samples/ts"
+    "test:js": "eslint --ext js -c base.js --no-ignore samples/js/**",
+    "test:ts": "eslint --ext ts -c typescript.js --no-ignore samples/ts/**"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,8 @@
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^5.16.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {
