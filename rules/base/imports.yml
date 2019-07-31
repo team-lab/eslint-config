@@ -37,14 +37,9 @@ rules:
       # 明示的な index の指定を許可しないか
     - noUselessIndex: true
   # 親ディレクトリ以上にいるモジュールの参照を許可しない
-  import/no-relative-parent-imports: error
+  import/no-relative-parent-imports: "off"
   # 未使用のモジュールの定義を許可しない
-  import/no-unused-modules:
-    - error
-      # exportしていないファイルを許可しないか
-    - missingExports: false
-      # exportしているが使用されていないモジュールを許可しないか
-      unusedExports: true
+  import/no-unused-modules: "off"
   # Helpful warnings
   # 重複する名前のexportを許可しない
   import/export: error
@@ -74,7 +69,7 @@ rules:
   # 重複するモジュールからのimportを許可しない
   import/no-duplicates: error
   # Namespaceのimportを許可しない
-  import/no-namespace: "off"
+  import/no-namespace: error
   # 拡張子の有無を統一する
   import/extensions:
     - error
@@ -92,7 +87,7 @@ rules:
   # import後に空行を強制する
   import/newline-after-import: error
   # exportが１つしかない場合はexport defaultの使用を強制する
-  import/prefer-default-export: error
+  import/prefer-default-export: "off"
   # １ファイルでの最大の依存モジュール数を指定する
   import/max-dependencies: "off"
   # import 'foo'を許可しない
