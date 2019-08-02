@@ -104,5 +104,5 @@ rules:
     - error
     - before: false
       after: true
-  "@typescript-eslint/unbound-method": error # メソッドが期待されるスコープ内でコールされることを強制する
+  "@typescript-eslint/unbound-method": "off" # メソッドが期待されるスコープ内でコールされることを強制する
   "@typescript-eslint/unified-signatures": error # 不必要なオーバーライドを許可しない
