@@ -55,7 +55,7 @@ rules:
   "@typescript-eslint/no-empty-interface": error # 空のインターフェースの定義を許可しない
   "@typescript-eslint/no-explicit-any": "off" # any型の使用を許可しない
   no-extra-parens: "off" # 競合するESLint標準のルールをオフに
-  "@typescript-eslint/no-extra-parens": "error" # 不必要なカッコを許可しない
+  "@typescript-eslint/no-extra-parens": error # 不必要なカッコを許可しない
   "@typescript-eslint/no-extraneous-class": "off" # 名前空間としてのクラスの使用を許可しない
   "@typescript-eslint/no-floating-promises": error # await/thenされないPromise-Likeな値を許可しない
   "@typescript-eslint/no-for-in-array": error # 配列でのfor-inループを許可しない
