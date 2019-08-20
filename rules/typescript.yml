@@ -5,7 +5,7 @@ rules:
   "@typescript-eslint/adjacent-overload-signatures": error # 同名のオーバーロードを並べて定義することを強制する
   "@typescript-eslint/array-type": # 配列の表現をT[]かArray<T>に統一する
     - error
-    - generic # 常にジェネリックでの記載を強制する
+    - default: generic # 常にジェネリックでの記載を強制する
   "@typescript-eslint/await-thenable": error # Promiseな値以外でのawaitの使用を許可しない
   "@typescript-eslint/ban-ts-ignore": "off" # @ts-ignoreの使用を許可しない
   "@typescript-eslint/ban-types": error # 特定のランタイムオブジェクトの型としての使用を許可しない
