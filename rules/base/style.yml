@@ -465,10 +465,10 @@ rules:
   # 関数名とカッコの間のスペースの有無を統一する
   space-before-function-paren:
     - error
-      # 匿名関数ではスペースを強制する
-    - anonymous: always
-      # 関数式ではスペースを強制する
-      named: always
+      # 匿名関数ではスペースを許可しない
+    - anonymous: never
+      # 関数式ではスペースを許可しない
+      named: never
       # 非同期関数ではスペースを強制する
       asyncArrow: always
   # カッコの開始・終了前後でのスペースの有無を統一する
