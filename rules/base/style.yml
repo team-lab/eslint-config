@@ -107,6 +107,11 @@ rules:
     - declaration
       # アロー関数の使用を許可する
     - allowArrowFunctions: true
+  # 関数の引数内での改行の有無を強制する
+  function-call-argument-newline:
+    - error
+      # 改行の有無を統一する
+    - consistent
   # 引数内での改行を統一する
   function-paren-newline:
     - error
