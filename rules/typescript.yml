@@ -5,7 +5,7 @@ rules:
   "@typescript-eslint/adjacent-overload-signatures": error # 同名のオーバーロードを並べて定義することを強制する
   "@typescript-eslint/array-type": # 配列の表現をT[]かArray<T>に統一する
     - error
-    - generic # 常にジェネリックでの記載を強制する
+    - default: generic # 常にジェネリックでの記載を強制する
   "@typescript-eslint/await-thenable": error # Promiseな値以外でのawaitの使用を許可しない
   "@typescript-eslint/ban-ts-ignore": "off" # @ts-ignoreの使用を許可しない
   "@typescript-eslint/ban-types": error # 特定のランタイムオブジェクトの型としての使用を許可しない
@@ -49,7 +49,10 @@ rules:
         requireLast: false
   "@typescript-eslint/member-naming": "off" # メンバー変数の命名規則を統一する
   "@typescript-eslint/member-ordering": error # クラスのメンバーの定義順を統一する
-  "@typescript-eslint/no-angle-bracket-type-assertion": error # <Type>アサーションの使用を許可しない
+  "@typescript-eslint/consistent-type-assertions": # アサーションの表記を統一する
+    - error
+    - assertionStyle: as # <Type>よりasアサーションの仕様を強制する
+      objectLiteralTypeAssertions: allow-as-parameter # パラメータでの分割代入時のサーションを許可する
   no-array-constructor: "off" # 競合するESLint標準のルールをオフに
   "@typescript-eslint/no-array-constructor": error # Arrayクラスを使用する場合にジェネリックの指定を強制する
   "@typescript-eslint/no-empty-interface": error # 空のインターフェースの定義を許可しない
@@ -69,7 +72,9 @@ rules:
   "@typescript-eslint/no-parameter-properties": "off" # パラメータプロパティの使用を許可しない
   "@typescript-eslint/no-require-imports": "off" # require()の使用を許可しない
   "@typescript-eslint/no-this-alias": "off" # thisの代入を許可しない
-  "@typescript-eslint/no-triple-slash-reference": error # /// <reference path="" />コメントを許可しない
+  "@typescript-eslint/triple-slash-reference": # /// <reference path="" />を使用するかを統一する
+    - error
+    - types: prefer-import # importでの型指定を強制する
   "@typescript-eslint/no-type-alias": "off" # 型エイリアスの使用を許可しない
   "@typescript-eslint/no-unnecessary-qualifier": error # 不要な名前空間修飾子の使用を許可しない
   "@typescript-eslint/no-unnecessary-type-assertion": error # 不必要なアサーションを許可しない

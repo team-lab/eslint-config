@@ -19,14 +19,14 @@
   },
   "homepage": "https://github.com/team-lab/eslint-config-teamlab#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.1",
     "eslint-config-typescript": "^3.0.0",
     "eslint-plugin-import": "^2.18.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.7"
+    "confusing-browser-globals": "^1.0.8"
   }
 }
