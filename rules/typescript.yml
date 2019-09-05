@@ -49,10 +49,6 @@ rules:
         requireLast: false
   "@typescript-eslint/member-naming": "off" # メンバー変数の命名規則を統一する
   "@typescript-eslint/member-ordering": error # クラスのメンバーの定義順を統一する
-  "@typescript-eslint/consistent-type-assertions": # アサーションの表記を統一する
-    - error
-    - assertionStyle: as # <Type>よりasアサーションの仕様を強制する
-      objectLiteralTypeAssertions: allow-as-parameter # パラメータでの分割代入時のサーションを許可する
   no-array-constructor: "off" # 競合するESLint標準のルールをオフに
   "@typescript-eslint/no-array-constructor": error # Arrayクラスを使用する場合にジェネリックの指定を強制する
   "@typescript-eslint/no-empty-interface": error # 空のインターフェースの定義を許可しない
