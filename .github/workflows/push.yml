@@ -1,7 +1,4 @@
-on:
-  push:
-    tags:
-      - v*
+on: push
 name: Build, Test, and Publish
 jobs:
   build:
@@ -13,13 +10,16 @@ jobs:
       uses: actions/npm@master
       with:
         args: install
+      if: contains(github.ref, 'tags/v')
     - name: Test
       uses: actions/npm@master
       with:
         args: test
+      if: contains(github.ref, 'tags/v')
     - name: Publish
       uses: actions/npm@master
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       with:
         args: publish --access public
+      if: contains(github.ref, 'tags/v')
