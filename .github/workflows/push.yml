@@ -17,7 +17,7 @@ jobs:
     - name: Tag
       uses: actions/bin/filter@master
       with:
-        args: tag
+        args: tag v*
     - name: Publish
       uses: actions/npm@master
       env:
