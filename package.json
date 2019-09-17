@@ -1,23 +1,24 @@
 {
-  "name": "eslint-config-teamlab",
-  "version": "0.0.0",
+  "name": "@team-lab/eslint-config",
+  "version": "0.1.0",
   "description": "teamLab's ESLint configuration",
   "main": "base.js",
   "scripts": {
     "lint": "eslint --ext js .",
+    "test": "npm run test:js && npm run test:ts",
     "test:js": "eslint --ext js -c base.js --no-ignore samples/js/**",
     "test:ts": "eslint --ext ts -c typescript.js --no-ignore samples/ts/**"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/team-lab/eslint-config-teamlab.git"
+    "url": "git+https://github.com/team-lab/eslint-config.git"
   },
-  "author": "teamLab",
+  "author": "teamLab (https://www.team-lab.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/team-lab/eslint-config-teamlab/issues"
+    "url": "https://github.com/team-lab/eslint-config/issues"
   },
-  "homepage": "https://github.com/team-lab/eslint-config-teamlab#readme",
+  "homepage": "https://github.com/team-lab/eslint-config#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
