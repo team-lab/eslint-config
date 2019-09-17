@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    tags:
+      - '*'
 name: Build, Test, and Publish
 jobs:
   build:
@@ -14,10 +17,6 @@ jobs:
       uses: actions/npm@master
       with:
         args: test
-    - name: Tag
-      uses: actions/bin/filter@master
-      with:
-        args: tag v*
     - name: Publish
       uses: actions/npm@master
       env:
