@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint --ext js .",
     "test": "npm run test:js && npm run test:ts",
-    "test:js": "eslint --ext js -c base.js --no-ignore samples/js/**",
-    "test:ts": "eslint --ext ts -c typescript.js --no-ignore samples/ts/**"
+    "test:js": "eslint --ext js -c base.js --no-ignore samples/js/**/*.js",
+    "test:ts": "eslint --ext ts -c typescript.js --no-ignore samples/ts/**/*.ts"
   },
   "repository": {
     "type": "git",
