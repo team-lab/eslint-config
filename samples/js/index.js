@@ -1,7 +1,7 @@
-/**
- * @file JavaScriptルールの動作確認用
- */
+// Has no error
+let score = 100;
 
-import foo from './foo';
+score *= 3;
 
-console.log('happen');
+// eslint-disable-next-line no-console
+console.log(score);

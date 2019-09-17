@@ -1,7 +1,7 @@
-/**
- * @file TypeScriptルールの動作確認用
- */
+// Has no error
+let score: number | null = 100;
 
-import bar from './foo';
+score *= 3;
 
-console.log("happen" + bar)
+// eslint-disable-next-line no-console
+console.log(score);
