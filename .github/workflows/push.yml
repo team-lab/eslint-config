@@ -10,12 +10,10 @@ jobs:
       uses: actions/npm@master
       with:
         args: install
-      if: contains(github.ref, 'tags/v')
     - name: Test
       uses: actions/npm@master
       with:
         args: test
-      if: contains(github.ref, 'tags/v')
     - name: Publish
       uses: actions/npm@master
       env:
