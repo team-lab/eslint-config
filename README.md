@@ -39,7 +39,7 @@ yarn add -D \
 # or
 npm i -D \
   eslint @team-lab/eslint-config eslint-plugin-import \
-  @typescript-eslint/parser @typescript-eslint/eslint-plugin \
+  @typescript-eslint/parser@^1.13.0 @typescript-eslint/eslint-plugin@^1.13.0 \
   eslint-config-typescript typescript
 ```
 
