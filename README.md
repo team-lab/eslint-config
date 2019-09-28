@@ -22,7 +22,10 @@ npm i -D eslint @team-lab/eslint-config eslint-plugin-import
 
 ```yml
 extends:
-  - '@team-lab'
+  - '@team-lab/eslint-config'
+
+  # or 省略表記
+  # - '@team-lab'
 ```
 
 ### TypeScript
@@ -34,12 +37,12 @@ extends:
 ```sh
 yarn add -D \
   eslint @team-lab/eslint-config eslint-plugin-import \
-  @typescript-eslint/parser@^1.13.0 @typescript-eslint/eslint-plugin@^1.13.0 \
+  "@typescript-eslint/parser@^1.13.0" "@typescript-eslint/eslint-plugin@^1.13.0" \
   eslint-config-typescript typescript
 # or
 npm i -D \
   eslint @team-lab/eslint-config eslint-plugin-import \
-  @typescript-eslint/parser@^1.13.0 @typescript-eslint/eslint-plugin@^1.13.0 \
+  "@typescript-eslint/parser@^1.13.0" "@typescript-eslint/eslint-plugin@^1.13.0" \
   eslint-config-typescript typescript
 ```
 
