@@ -13,12 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/team-lab/eslint-config.git"
   },
-  "author": "teamLab (https://www.team-lab.com)",
+  "author": "teamLab <https://www.team-lab.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/team-lab/eslint-config/issues"
   },
-  "homepage": "https://github.com/team-lab/eslint-config#readme",
+  "homepage": "https://www.team-lab.com",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",

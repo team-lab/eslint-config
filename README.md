@@ -1,4 +1,4 @@
-# eslint-config-teamlab
+# @team-lab/eslint-config
 
 This is [teamLab](https://team-lab.com)'s standard ESLint configuration.
 
@@ -13,31 +13,36 @@ This is [teamLab](https://team-lab.com)'s standard ESLint configuration.
 #### 依存パッケージ
 
 ```sh
-yarn add -D eslint eslint-config-teamlab eslint-plugin-import
+yarn add -D eslint @team-lab/eslint-config eslint-plugin-import
 # or
-npm i -D eslint eslint-config-teamlab eslint-plugin-import
+npm i -D eslint @team-lab/eslint-config eslint-plugin-import
 ```
 
 #### .eslintrc
 
 ```yml
 extends:
-  - teamlab
+  - '@team-lab/eslint-config'
+
+  # or 省略表記
+  # - '@team-lab'
 ```
 
 ### TypeScript
+
+`@typescript-eslint`の対応バージョンは`v1.13.0`です。
 
 #### 依存パッケージ
 
 ```sh
 yarn add -D \
-  eslint eslint-config-teamlab eslint-plugin-import \
-  @typescript-eslint/parser @typescript-eslint/eslint-plugin \
+  eslint @team-lab/eslint-config eslint-plugin-import \
+  "@typescript-eslint/parser@^1.13.0" "@typescript-eslint/eslint-plugin@^1.13.0" \
   eslint-config-typescript typescript
 # or
 npm i -D \
-  eslint eslint-config-teamlab eslint-plugin-import \
-  @typescript-eslint/parser @typescript-eslint/eslint-plugin \
+  eslint @team-lab/eslint-config eslint-plugin-import \
+  "@typescript-eslint/parser@^1.13.0" "@typescript-eslint/eslint-plugin@^1.13.0" \
   eslint-config-typescript typescript
 ```
 
@@ -47,5 +52,5 @@ npm i -D \
 parserOptions:
   project: ./tsconfig.json # tsconfig.json path here
 extends:
-  - teamlab/typescript
+  - '@team-lab/eslint-config/typescript'
 ```
