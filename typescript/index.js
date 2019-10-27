@@ -1,16 +1,16 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: 'module',
     ecmaFeatures: {
       impliedStrict: true,
-      jsx: false
-    }
+      jsx: false,
+    },
   },
   extends: [
-    './rules/base.yml',
-    './rules/typescript.yml',
-    'plugin:import/typescript'
-  ]
+    '../rules/base.yml',
+    '../rules/typescript.yml',
+    'plugin:import/typescript',
+  ],
 };

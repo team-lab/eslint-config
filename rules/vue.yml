@@ -1,0 +1,4 @@
+# Vue Rules
+---
+extends:
+  - plugin:vue/recommended

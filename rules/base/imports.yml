@@ -44,7 +44,7 @@ rules:
   # 重複する名前のexportを許可しない
   import/export: error
   # デフォルトのimport/exportで使用されている名前の使用を許可しない
-  import/no-named-as-default: error
+  import/no-named-as-default: 'off'
   # export defaultされた値からプロパティでの他のexportされた名前へのアクセスを許可しない
   import/no-named-as-default-member: error
   # @deprecatedコメントが付いた名前の使用を許可しない
