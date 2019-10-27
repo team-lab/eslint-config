@@ -32,10 +32,7 @@ rules:
   # クラスとして宣言された変数への代入を許可しない
   no-class-assign: error
   # 比較と混乱させる箇所のでアロー関数の使用を許可しない
-  no-confusing-arrow:
-    - error
-      # 比較式をカッコで囲えば許可する
-    - allowParens: true
+  no-confusing-arrow: 'off'
   # constで宣言された変数への代入を許可しない
   no-const-assign: error
   # 重複するクラスメンバの定義を許可しない
