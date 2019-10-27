@@ -6,8 +6,10 @@
   "scripts": {
     "lint": "eslint --ext js .",
     "test": "npm run test:js && npm run test:ts",
-    "test:js": "eslint --ext js -c base.js --no-ignore samples/js/**/*.js",
-    "test:ts": "eslint --ext ts -c typescript.js --no-ignore samples/ts/**/*.ts"
+    "test:js": "eslint --ext js -c samples/js/.eslintrc.yml --no-ignore samples/js/**/*.js",
+    "test:ts": "eslint --ext ts -c typescript/index.js --no-ignore samples/ts/**/*.ts",
+    "test:vue": "eslint --ext vue -c samples/vue/.eslintrc.yml --no-ignore samples/vue/**/*.vue",
+    "test:vuets": "eslint --ext vue -c samples/vue-ts/.eslintrc.js --no-ignore samples/vue-ts/**/*.vue"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,16 @@
   },
   "homepage": "https://www.team-lab.com",
   "devDependencies": {
+    "@team-lab/eslint-config": "^0.1.1",
+    "@types/eslint": "^6.1.3",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^6.2.1",
+    "eslint": "^6.4.0",
     "eslint-config-typescript": "^3.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "typescript": "^3.5.3"
+    "eslint-plugin-vue": "^5.2.3",
+    "typescript": "^3.6.3",
+    "vue-eslint-parser": "^6.0.4"
   },
   "dependencies": {
     "confusing-browser-globals": "^1.0.8"

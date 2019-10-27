@@ -4,5 +4,5 @@ module.exports = {
   parserOptions: {
     project: path.resolve(__dirname, 'tsconfig.json')
   },
-  extends: ['../../typescript/index.js']
+  extends: ['../../typescript/vue.js']
 };
