@@ -24,16 +24,16 @@
   "devDependencies": {
     "@team-lab/eslint-config": "^0.1.1",
     "@types/eslint": "^6.1.3",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "eslint": "^6.6.0",
     "eslint-config-typescript": "^3.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^5.2.3",
-    "typescript": "^3.6.3",
+    "typescript": "^3.6.4",
     "vue-eslint-parser": "^6.0.4"
   },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.8"
+    "confusing-browser-globals": "^1.0.9"
   }
 }

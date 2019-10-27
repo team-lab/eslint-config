@@ -12,6 +12,7 @@ module.exports = {
       jsx: false,
     },
     warnOnUnsupportedTypeScriptVersion: false,
+    extraFileExtensions: ['.vue'],
   },
   extends: [
     '../rules/base.yml',
