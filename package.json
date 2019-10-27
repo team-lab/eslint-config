@@ -7,7 +7,7 @@
     "lint": "eslint --ext js .",
     "test": "npm run test:js && npm run test:ts",
     "test:js": "eslint --ext js -c samples/js/.eslintrc.yml --no-ignore samples/js/**/*.js",
-    "test:ts": "eslint --ext ts -c typescript/index.js --no-ignore samples/ts/**/*.ts",
+    "test:ts": "eslint --ext ts -c samples/ts/.eslintrc.js --no-ignore samples/ts/**/*.ts",
     "test:vue": "eslint --ext vue -c samples/vue/.eslintrc.yml --no-ignore samples/vue/**/*.vue",
     "test:vuets": "eslint --ext vue -c samples/vue-ts/.eslintrc.js --no-ignore samples/vue-ts/**/*.vue"
   },
